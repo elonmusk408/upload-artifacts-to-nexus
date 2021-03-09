@@ -26,7 +26,7 @@
     </repository>
     <snapshotRepository>
       <id>snapshots</id>
-      <url>http://18.223.151.220:8081/#admin/repository/repositories:maven-snapshots</url>
+      <url>http://18.223.151.220:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
 
