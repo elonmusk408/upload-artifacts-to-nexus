@@ -33,7 +33,5 @@ pipeline {
                     nexus_test()             
                     } 
                 }
-            }
-        }
     }
 }
