@@ -1,10 +1,6 @@
 pipeline {
-    agent {
-        label "master"
-    }
-    tools {
-        maven "maven"
-    }
+    agent  any
+   
     environment {
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
@@ -23,7 +19,7 @@ pipeline {
         stage("Maven Build") {
             steps {
                 script {
-                    sh "mvn package -DskipTests=true"
+                    sh "mvn package "
                 }
             }
         }
