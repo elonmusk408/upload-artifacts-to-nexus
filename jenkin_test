@@ -31,8 +31,7 @@ pipeline {
             steps {
                         
                     nexus_test()  
-                   
-                    mvn deploy 
+                  
                     } 
                 }
     }
