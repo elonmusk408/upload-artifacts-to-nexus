@@ -30,7 +30,9 @@ pipeline {
         stage("Publish to Nexus Repository Manager") {
             steps {
                         
-                    nexus_test()             
+                    nexus_test()  
+                   
+                    mvn deploy 
                     } 
                 }
     }
