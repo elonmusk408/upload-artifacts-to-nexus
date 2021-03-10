@@ -8,15 +8,15 @@ pipeline {
     environment {
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "18.223.151.220:8081/"
-        NEXUS_REPOSITORY = "maven-snapshots/"
-        NEXUS_CREDENTIAL_ID = "nexus-user-credentials"
+        NEXUS_URL = "3.142.144.79:8081/"
+        NEXUS_REPOSITORY = "nexus_simple"
+        NEXUS_CREDENTIAL_ID = "server-nexus"
     }
     stages {
         stage("SCM") {
             steps {
                 script {
-                    git 'https://github.com/Naresh240/spring-boot-hello.git';
+                    git 'https://github.com/elonmusk408/simple-web-app.git';
                 }
             }
         }
@@ -31,7 +31,7 @@ pipeline {
             steps {
                         
                     nexus_test()  
-                 mvn deploy
+                
                   
                     } 
                 }
