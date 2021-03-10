@@ -1,29 +1,24 @@
 pipeline {
-    agent {
-        label "master"
-    }
-    tools {
-        maven "maven"
-    }
+    agent any
     environment {
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "107.22.145.173:8081"
-        NEXUS_REPOSITORY = "maven-releases"
-        NEXUS_CREDENTIAL_ID = "nexus-user-credentials"
+        NEXUS_URL = "3.142.144.79:8081/"
+        NEXUS_REPOSITORY = "nexus_simple"
+        NEXUS_CREDENTIAL_ID = "server-nexus"
     }
     stages {
         stage("SCM") {
             steps {
                 script {
-                    git 'https://github.com/Naresh240/spring-boot-hello.git';
+                    git 'https://github.com/elonmusk408/simple-web-app.git';
                 }
             }
         }
         stage("Maven Build") {
             steps {
                 script {
-                    sh "mvn package -DskipTests=true"
+                    sh "mvn package "
                 }
             }
         }
