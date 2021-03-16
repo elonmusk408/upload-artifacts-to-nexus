@@ -1,0 +1,39 @@
+#!/usr/bin/env groovy
+
+@Library('shared-library@master') _ //master or whatever branch
+
+pipeline {
+    agent  any
+   
+    environment {
+        NEXUS_VERSION = "nexus3"
+        NEXUS_PROTOCOL = "http"
+        NEXUS_URL = "35.226.15.200:8081"
+        NEXUS_REPOSITORY = "nexus_simple"
+        NEXUS_CREDENTIAL_ID = "server-nexus"
+    }
+    stages {
+        stage("SCM") {
+            steps {
+                script {
+                    git 'https://github.com/elonmusk408/simple-web-app.git';
+                }
+            }
+        }
+        stage("Maven Build") {
+            steps {
+                script {
+                    sh "mvn package -nsu"
+                }
+            }
+        }
+        stage("Publish to Nexus Repository Manager") {
+            steps {
+                        
+                    nexus_test()  
+                
+                  
+                    } 
+                }
+    }
+}
