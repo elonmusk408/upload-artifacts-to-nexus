@@ -4,7 +4,7 @@ pipeline {
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
         NEXUS_URL = "40.87.105.128:8081/"
-        NEXUS_REPOSITORY = "nexus_simple"
+        NEXUS_REPOSITORY = "nexus-simple"
         NEXUS_CREDENTIAL_ID = "localnexus3"
     }
     stages {
