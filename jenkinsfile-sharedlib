@@ -16,7 +16,7 @@ pipeline {
         stage("SCM") {
             steps {
                 script {
-                    git 'https://github.com/leachim6/hello-world.git';
+                    git 'https://github.com/elonmusk408/helloworld-1.git';
                 }
             }
         }
